@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Pagina Java 🚀</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+<body style="background-color: #0D1117;" class="text-white">
+
+<div class="container mt-4">
+	<h1 class="text-center">Pagina en Java Spring Boot - 2022</h1>
+	<p>Funciona al 99%. ir a http://localhost:8080/listar</p>
+</div>
+
+<div class="container mt-4 bg-light">
+	<table class="table table-striped table-hover table-dark">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRES</th>
+				<th>TELEFONO</th>
+				<th>OPCIONES</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="persona:${personas}">
+				<td th:text="${persona.id}">${persona.id}</td>
+				<td th:text="${persona.name}">${persona.name}</td>
+				<td th:text="${persona.telefono}">${persona.telefono}</td>
+				<td> 
+					<a class="btn btn-warning">Editar</a>
+					<a class="btn btn-danger">Eliminar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!--
+	MySQL Workbench - Mysql80 - funciona al 99%
+	
+	Error que no creaba tablas en BD:  mi caso fue el nombre de los packages
+	https://stackoverflow.com/questions/26881739/unable-to-get-spring-boot-to-automatically-create-database-schema
+	
+	https://www.campusmvp.es/recursos/post/que-son-spring-framework-y-spring-boot-tu-primer-programa-java-con-este-framework.aspx
+	
+	https://www.youtube.com/watch?v=KTPh5Cryl24
+	
+	https://www.youtube.com/watch?v=QQ72JXUQRNE
+	
+	====== en java application.properties
+	spring.datasource.url=jdbc:mysql://localhost:3306/db_java?serverTimeZone=UTC
+	
+	===== en mysql por si las
+	SET GLOBAL time_zone = '-3:00';
+-->
+</body>
+</html> 
